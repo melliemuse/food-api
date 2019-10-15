@@ -1,0 +1,11 @@
+.foodList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.food-items {
+    margin: 5px 10px;
+    width: 18%;
+}
