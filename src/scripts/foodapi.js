@@ -64,12 +64,13 @@ const addFoodToDom = (foodAsHTML) => {
     .then(response => response.json())
     .then(myParsedFoods => {
         myParsedFoods.forEach(food => {
-            console.log(food) // Should have a `barcode` property
+            // Should have a `barcode` property
 
     //         // Now fetch the food from the Food API
             fetch(`https://world.openfoodfacts.org/api/v0/product/${food.barcode}.json`)
                 .then(response => response.json())
                 .then(productInfo => {
+                    console.log(food)
                     const evaluateStoreProperties = (propertyJson, propertyStore) => {
                         if (productInfo.product[propertyJson]) {
                             food[propertyStore] = productInfo.product[propertyJson]
@@ -81,7 +82,7 @@ const addFoodToDom = (foodAsHTML) => {
                         evaluateStoreProperties('ingredients_text', 'ingredients')
                         evaluateStoreProperties('countries', 'country')
                         evaluateStoreProperties('calories', 'calories')
-                     
+                    //    debugger 
                        if (productInfo.product.nutriments.fat) {
                            food.fat = productInfo.product.nutriments.fat
                        } else {
