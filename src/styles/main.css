@@ -3,9 +3,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-content: space-around;
 }
 
 .food-items {
-    margin: 5px 10px;
-    width: 18%;
+    margin: 5px 5px;
+    /* width: 200px;
+    height: 800px; */
+    width: 33%;
+    padding: 0px 5px 10px 15px;
+    border: 1px dashed goldenrod;
 }
